@@ -1,0 +1,85 @@
+name: |-
+  🇻🇳 Vietdeptrai
+desc: |-
+  🇻🇳 Mở khoá các tính năng cao cấp
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1013.png
+
+http:
+
+  mitm:
+    - "nicegram.cloud"
+    - "ap*.intsig.net"
+    - "iap.etm.tech"
+    - "premium*.truecaller.com"
+    - "photos.adobe.io"
+    - "*.oracle.bendingspoonsapps.com"
+
+  script:
+# 🇻🇳 Nicegram
+    - match: ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth)
+      name: "Nicegram_4"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+# 🇻🇳 Cam Scanner
+    - match: ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
+      name: "CamScanner_6"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+# 🇻🇳 Speed Test Master
+    - match: ^https:\/\/iap\.etm\.tech\/receipts
+      name: "SpeedTestMaster_8"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+# 🇻🇳 True Caller
+    - match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)
+      name: "TrueCaller_10"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+# 🇻🇳 Lightroom
+    - match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
+      name: "Lightroom_12"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+# 🇻🇳 Bending Spoon Apps
+    - match: ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify)
+      name: "BendingSpoonApps_14"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
+
+script-providers:
+  "Nicegram_4":
+    url: https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js
+    interval: 86400
+  "CamScanner_6":
+    url: https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js
+    interval: 86400
+  "SpeedTestMaster_8":
+    url: https://raw.githubusercontent.com/lonely0811/olsd/main/speedtest.js
+    interval: 86400
+  "TrueCaller_10":
+    url: https://raw.githubusercontent.com/alonex101/shdwrckt/main/truecaller.js
+    interval: 86400
+  "Lightroom_12":
+    url: https://raw.githubusercontent.com/lonely0811/Surge/main/js/lroom.js
+    interval: 86400
+  "BendingSpoonApps_14":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js
+    interval: 86400
