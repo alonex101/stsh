@@ -1,0 +1,24 @@
+name: |-
+  Cam Scanner
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1004.png
+
+http:
+
+  mitm:
+    - "*.camscanner.com"
+    - "*.intsig.net"
+
+  script:
+    - match: ^https?:\/\/.*\.(intsig\.net|camscanner\.com)
+      name: "camscanner_1"
+      type: response
+      require-body: true
+      max-size: 0
+
+script-providers:
+  "camscanner_1":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
+    interval: 86400
