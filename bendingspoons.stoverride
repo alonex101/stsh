@@ -1,0 +1,23 @@
+name: |-
+  Bending Spoons
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1029.png
+
+http:
+
+  mitm:
+    - "*.oracle.bendingspoonsapps.com"
+
+  script:
+    - match: ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify)
+      name: "bending_1"
+      type: response
+      require-body: true
+      max-size: 0
+
+script-providers:
+  "bending_1":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js
+    interval: 86400
