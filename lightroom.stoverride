@@ -1,0 +1,22 @@
+name: |-
+  LightRoom
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1042.png
+
+http:
+
+  mitm:
+    - "photos.adobe.io"
+
+  script:
+    - match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
+      name: "LightRoom_5"
+      type: response
+      require-body: true
+
+script-providers:
+  "LightRoom_5":
+    url: https://raw.githubusercontent.com/lonely0811/Surge/main/js/lroom.js
+    interval: 86400
