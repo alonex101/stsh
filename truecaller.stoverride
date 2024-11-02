@@ -1,0 +1,23 @@
+name: |-
+  True Caller
+desc: |-
+  Premium Unlocked
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1084.png
+
+http:
+
+  mitm:
+    - "premium*.truecaller.com"
+
+  script:
+    - match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)
+      name: "Truecaller_5"
+      type: response
+      require-body: true
+      max-size: 0
+
+script-providers:
+  "Truecaller_5":
+    url: https://raw.githubusercontent.com/alonex101/shdwrckt/refs/heads/main/truecaller.js
+    interval: 86400
