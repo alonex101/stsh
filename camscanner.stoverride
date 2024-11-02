@@ -8,17 +8,17 @@ icon: |-
 http:
 
   mitm:
-    - "*.camscanner.com"
-    - "*.intsig.net"
+    - "ap*.intsig.net"
 
   script:
-    - match: ^https?:\/\/.*\.(intsig\.net|camscanner\.com)
-      name: "camscanner_1"
+    - match: ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
+      name: "Camscanner"
       type: response
       require-body: true
-      max-size: 0
+      max-size: -1
+      timeout: 60
 
 script-providers:
-  "camscanner_1":
-    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
+  "Camscanner":
+    url: https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js
     interval: 86400
