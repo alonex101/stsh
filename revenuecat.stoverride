@@ -1,0 +1,32 @@
+name: |-
+  Revenue Cat
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1023.png
+
+http:
+
+  mitm:
+    - "api.revenuecat.com"
+
+  script:
+    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+      name: "RevenueCatVip_9"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers)
+      name: "RevenueCatDeleteHeader_10"
+      type: request
+      timeout: 60
+
+script-providers:
+  "RevenueCatVip_9":
+    url: https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
+    interval: 86400
+  "RevenueCatDeleteHeader_10":
+    url: https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
+    interval: 86400
