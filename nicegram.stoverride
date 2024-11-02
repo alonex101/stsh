@@ -1,0 +1,24 @@
+name: |-
+  Nice Gram
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1050.png
+
+http:
+
+  mitm:
+    - "nicegram.cloud"
+
+  script:
+    - match: ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth)
+      name: "NicegramProCrack_17"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+script-providers:
+  "NicegramProCrack_17":
+    url: https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js
+    interval: 86400
