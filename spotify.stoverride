@@ -11,7 +11,6 @@ http:
     - "spclient.wg.spotify.com"
 
   header-rewrite:
-# if-none-match返回304状态码
     - >-
       ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ request-del if-none-match
 
