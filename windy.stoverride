@@ -1,0 +1,24 @@
+name: |-
+  Windy
+desc: |-
+  Fake Premium
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1046.png
+
+http:
+
+  mitm:
+    - "account.windy.com"
+
+  script:
+    - match: ^https?:\/\/account\.windy\.com\/api\/info
+      name: "Windy_3"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+script-providers:
+  "Windy_3":
+    url: https://github.com/ddgksf2013/MoYu/raw/master/WindyProCrack.js
+    interval: 86400
